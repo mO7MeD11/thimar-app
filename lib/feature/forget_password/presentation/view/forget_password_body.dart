@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:thimar/constant.dart';
-import 'package:thimar/core/routing/GoTo.dart';
 import 'package:thimar/core/utils/image_assets.dart';
 import 'package:thimar/core/widgets/custom_elevatedbutton.dart';
 import 'package:thimar/core/widgets/custom_text_form.dart';
-import 'package:thimar/feature/forget_password/presentation/view/forget_password.dart';
-import 'package:thimar/feature/register/presentation/view/register_view.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class ForgetPasswordBody extends StatelessWidget {
+  const ForgetPasswordBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +15,12 @@ class LoginViewBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-
           children: [
             Gap(80),
             Image.asset(ImageAssets.logo, height: 140),
             Gap(20),
             Text(
-              'مرحبا بك مرة أخرى',
+              'نسيت كلمة المرور',
 
               textDirection: TextDirection.rtl,
               style: TextStyle(
@@ -35,37 +31,24 @@ class LoginViewBody extends StatelessWidget {
             ),
             Gap(10),
             Text(
-              'يمكنك تسجيل الدخول الأن',
+              'أدخل رقم الجوال المرتبط بحسابك',
               textDirection: TextDirection.rtl,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
-            Gap(10),
-            CustomTextForm(icon: ImageAssets.phone, hitText: 'رقم الجوال'),
-            Gap(10),
-            CustomTextForm(icon: ImageAssets.unlock, hitText: 'كلمة المرور'),
-
-            Gap(10),
-
-            GestureDetector(
-              onTap: () => GoTo(ForgetPassword()),
-              child: Text(
-                'نسيت كلمه المرور',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-              ),
-            ),
             Gap(20),
-            CustomElevatedbutton(text: 'تسجيل الدخول'),
-
-            Gap(150),
+            CustomTextForm(icon: ImageAssets.phone, hitText: 'رقم الجوال'),
+            Gap(20),
+            CustomElevatedbutton(text: 'تأكيد رقم الجوال'),
+            Gap(260),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
                   onTap: () {
-                    GoTo(RegisterView());
+                    Navigator.pop(context);
                   },
                   child: Text(
-                    'تسجيل الان',
+                    'تسجيل الدخول',
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       color: KPColor,
@@ -75,7 +58,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '  ليس لديك حساب ؟  ',
+                  ' لديك حساب بالفعل ؟  ',
                   textDirection: TextDirection.rtl,
 
                   style: TextStyle(

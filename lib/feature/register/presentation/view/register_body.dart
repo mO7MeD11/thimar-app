@@ -16,13 +16,26 @@ class RegisterBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Gap(80),
-            Image.asset(ImageAssets.logo),
+            Image.asset(ImageAssets.logo, height: 140),
+            Text(
+              'مرحبا بك مرة أخرى',
 
-            Text('مرحبا بك مرة أخرى'),
-            Gap(12),
-            Text('يمكنك تسجيل حساب جديد الأن'),
+              textDirection: TextDirection.rtl,
+              style: TextStyle(
+                color: KPColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Gap(10),
+            Text(
+              'يمكنك تسجيل حساب جديد الأن',
+              textDirection: TextDirection.rtl,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
             Gap(16),
             CustomTextForm(icon: ImageAssets.user, hitText: 'اسم المستخدم'),
             Gap(16),
