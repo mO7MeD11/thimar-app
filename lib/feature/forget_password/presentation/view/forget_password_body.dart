@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:thimar/constant.dart';
+import 'package:thimar/core/routing/GoTo.dart';
 import 'package:thimar/core/utils/image_assets.dart';
 import 'package:thimar/core/widgets/custom_elevatedbutton.dart';
 import 'package:thimar/core/widgets/custom_text_form.dart';
+import 'package:thimar/feature/otp/presentation/view/otp_view.dart';
 
 class ForgetPasswordBody extends StatelessWidget {
   const ForgetPasswordBody({super.key});
@@ -38,7 +40,7 @@ class ForgetPasswordBody extends StatelessWidget {
             Gap(20),
             CustomTextForm(icon: ImageAssets.phone, hitText: 'رقم الجوال'),
             Gap(20),
-            CustomElevatedbutton(text: 'تأكيد رقم الجوال'),
+            CustomElevatedbutton(text: 'تأكيد رقم الجوال' , onPressed: () => GoTo(OtpView()),),
             Gap(260),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
