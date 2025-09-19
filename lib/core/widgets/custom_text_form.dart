@@ -14,15 +14,15 @@ class CustomTextForm extends StatelessWidget {
         hintText: hitText,
         hintTextDirection: TextDirection.rtl,
         suffixIcon: Image.asset(icon),
-        focusedBorder: decorationInput(),
-        enabledBorder: decorationInput(),
-        disabledBorder: decorationInput(),
-        border: decorationInput(),
+        focusedBorder: _decorationInput(),
+        enabledBorder: _decorationInput(),
+        disabledBorder: _decorationInput(),
+        border: _decorationInput(),
       ),
     );
   }
 
-  OutlineInputBorder decorationInput() {
+  OutlineInputBorder _decorationInput() {
     return OutlineInputBorder(
       borderSide: BorderSide(width: .5, color: Colors.grey.shade400),
       borderRadius: BorderRadius.circular(10),

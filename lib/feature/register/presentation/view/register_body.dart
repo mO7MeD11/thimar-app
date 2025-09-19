@@ -7,61 +7,43 @@ import 'package:thimar/core/widgets/custom_elevatedbutton.dart';
 import 'package:thimar/core/widgets/custom_text_form.dart';
 import 'package:thimar/feature/register/presentation/view/register_view.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class RegisterBody extends StatelessWidget {
+  const RegisterBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-
           children: [
             Gap(80),
-            Image.asset(ImageAssets.logo, height: 140),
-            Gap(20),
-            Text(
-              'مرحبا بك مرة أخرى',
+            Image.asset(ImageAssets.logo),
 
-              textDirection: TextDirection.rtl,
-              style: TextStyle(
-                color: KPColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            Gap(10),
-            Text(
-              'يمكنك تسجيل الدخول الأن',
-              textDirection: TextDirection.rtl,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            ),
-            Gap(10),
+            Text('مرحبا بك مرة أخرى'),
+            Gap(12),
+            Text('يمكنك تسجيل حساب جديد الأن'),
+            Gap(16),
+            CustomTextForm(icon: ImageAssets.user, hitText: 'اسم المستخدم'),
+            Gap(16),
             CustomTextForm(icon: ImageAssets.phone, hitText: 'رقم الجوال'),
-            Gap(10),
-            CustomTextForm(icon: ImageAssets.unlock, hitText: 'كلمة المرور'),
-
-            Gap(10),
-
-            Text(
-              'نسيت كلمه المرور',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            ),
-            Gap(20),
-            CustomElevatedbutton(text: 'تسجيل الدخول'),
-
-            Gap(150),
+            Gap(16),
+            CustomTextForm(icon: ImageAssets.report, hitText: 'المدينة'),
+            Gap(16),
+            CustomTextForm(icon: ImageAssets.unlock, hitText: 'المدينة'),
+            Gap(16),
+            CustomTextForm(icon: ImageAssets.unlock, hitText: 'المدينة'),
+            Gap(16),
+            CustomElevatedbutton(text: 'تسجيل'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
                   onTap: () {
-                    GoTo(RegisterView());
+                    Navigator.pop(context);
                   },
                   child: Text(
-                    'تسجيل الان',
+                    'تسجيل الدخول',
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       color: KPColor,
@@ -71,7 +53,7 @@ class LoginViewBody extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '  ليس لديك حساب ؟  ',
+                  ' لديك حساب بالفعل ؟  ',
                   textDirection: TextDirection.rtl,
 
                   style: TextStyle(
